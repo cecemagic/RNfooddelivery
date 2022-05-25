@@ -13,18 +13,18 @@ import {
 } from 'react-native';
 import React, {useState, useRef, useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Star from '../assets/svg/star.svg';;
-import Clock from '../assets/svg/clock.svg';;
-import Marker from '../assets/svg/marker.svg';;
+import Star from '../assets/svg/star.svg';
+import Clock from '../assets/svg/clock.svg';
+import Marker from '../assets/svg/marker.svg';
 import Header from '../components/Header';
 import ButtonCommon from '../components/ButtonCommon';
-const food1 = require('../assets/images/foodImages/food1.png');;
-const burger = require('../assets/images/foodImages/burger.png');;
-const pizza = require('../assets/images/foodImages/pizza.png');;
-const bbq = require('../assets/images/foodImages/bbq.png');;
-const fruit = require('../assets/images/foodImages/fruit.png');;
-const sushi = require('../assets/images/foodImages/sushi.png');;
-const noodle = require('../assets/images/foodImages/noodle.png');;
+const food1 = require('../assets/images/foodImages/food1.png');
+const burger = require('../assets/images/foodImages/burger.png');
+const pizza = require('../assets/images/foodImages/pizza.png');
+const bbq = require('../assets/images/foodImages/bbq.png');
+const fruit = require('../assets/images/foodImages/fruit.png');
+const sushi = require('../assets/images/foodImages/sushi.png');
+const noodle = require('../assets/images/foodImages/noodle.png');
 const windowWidth = Dimensions.get('window').width;
 const itemWidth = windowWidth - 60;
 function ItemRestaurant({dataItem}) {
@@ -58,7 +58,7 @@ function ItemRestaurant({dataItem}) {
         </View>
       </View>
     </View>
-  );;
+  );
 }
 
 const foodMenu = [
@@ -75,12 +75,12 @@ const foodMenu = [
     {title: 'Noodle', img: noodle},
   ],
   // [{ title: 'Hotpot', img:burger }, { title: 'Noodle', img:noodle }],
-];;
+];
 
 export default function MainScreen({navigation}) {
   const [username, setusername] = useState('TÚ');
-  const ref = useRef();;
-  const refInput = useRef();;
+  const ref = useRef();
+  const refInput = useRef();
 
   const [listNearMe, setListNearMe] = useState([
     {
@@ -131,7 +131,7 @@ export default function MainScreen({navigation}) {
       distance: '15 min -3 km',
       star: 4,
     },
-  ]);;
+  ]);
   // useEffect(() => {
 
   //   refInput.current.focus()
@@ -145,7 +145,7 @@ export default function MainScreen({navigation}) {
 
   const renderItem = ({item, index}) => {
     return <ItemRestaurant dataItem={item} />;
-  };;
+  };
 
   const HeaderMain = () => {
     return (
@@ -280,14 +280,14 @@ export default function MainScreen({navigation}) {
         </View>
       </>
     );
-  };;
+  };
 
   const scrollUp = () => {
     ref.current.scrollToIndex({
       index: 2.5,
       animated: true,
-    });;
-  };;
+    });
+  };
 
   return (
     <View style={{flex: 1, paddingHorizontal: 30, backgroundColor: 'white'}}>
@@ -314,7 +314,7 @@ export default function MainScreen({navigation}) {
           />
         )}
         ListEmptyComponent={() => {
-          return <Text>List rỗng</Text>;;
+          return <Text>List rỗng</Text>;
         }}
       />
     </View>

@@ -10,9 +10,10 @@ import {
 } from 'react-native';
 // import DropDownPicker from 'react-native-dropdown-picker';
 import ButtonCommon from '../components/ButtonCommon';
+import HeaderBack from '../components/HeaderBack';
 // import HeaderBack from '../../components/HeaderBack';
 // import {countries} from '../data/data';
-// import {windowWidth} from '../Home';
+//import {windowWidth} from '../screens/MainScreen';
 
 export const fullDate = date => {
   const day = date.getDate();
@@ -28,24 +29,6 @@ export default function MyProfile({navigation}) {
   const [listAccount, setListAccount] = useState(null);
   const [account, setAccount] = useState(null);
 
-  // const [open, setOpen] = useState(false);
-  // const [value, setValue] = useState('null');
-  // const [items, setItems] = useState([]);
-  // const [textSearch, setTextSearch] = useState('null');
-
-  // React.useEffect(() => {
-  //     if (textSearch) {
-  //         setItems(
-  //             countries.reduce((array, current) => {
-  //                 if (current.name.toLocaleLowerCase().includes(textSearch.toLocaleLowerCase()) || current.code.toLocaleLowerCase().includes(textSearch.toLocaleLowerCase())) {
-  //                     array.push({ label: current.name, value: current.code })
-  //                 }
-  //                 return array;
-  //             }, []))
-  //     } else {
-  //         setItems(countries.map(item => ({ label: item.name, value: item.code })));
-  //     }
-  // }, [textSearch])
   React.useEffect(() => {
     AsyncStorage.getItem('account').then(accounts => {
       const data = JSON.parse(accounts);
@@ -74,7 +57,7 @@ export default function MyProfile({navigation}) {
   return (
     <SafeAreaView style={{flex: 1, marginHorizontal: 30}}>
       <View style={{}}>
-        {/* <HeaderBack navigation={navigation} text={'My Profile'} />z */}
+        <HeaderBack navigation={navigation} text={'My Profile'} />
       </View>
 
       <View style={{flex: 1}}>
@@ -83,37 +66,37 @@ export default function MyProfile({navigation}) {
         </View>
         <View style={{marginTop: 40}}>
           <View style={styles.line}>
-            <Text style={styles.lableStyle}>Fist Name</Text>
+            <TextInput style={styles.lableStyle}>First Name</TextInput>
             <Text style={[styles.textStyle]}>
               {account?.profile?.firstName}
             </Text>
           </View>
           <View style={styles.line}>
-            <Text style={styles.lableStyle}>Last Name</Text>
+            <TextInput style={styles.lableStyle}>Last Name</TextInput>
             <Text style={[styles.textStyle]}>{account?.profile?.lastName}</Text>
           </View>
           <View style={styles.line}>
-            <Text style={styles.lableStyle}>Brithday</Text>
+            <TextInput style={styles.lableStyle}>Birthday</TextInput>
             <Text style={[styles.textStyle]}>
               {fullDate(new Date(account?.profile?.date))}
             </Text>
           </View>
           <View style={styles.line}>
-            <Text style={styles.lableStyle}>Gender</Text>
+            <TextInput style={styles.lableStyle}>Gender</TextInput>
             <Text style={[styles.textStyle]}>{account?.profile?.gender}</Text>
           </View>
           <View style={styles.line}>
-            <Text style={styles.lableStyle}>Phone number</Text>
+            <TextInput style={styles.lableStyle}>Phone number</TextInput>
             <Text style={[styles.textStyle]}>
               {account?.profile?.phoneNumber}
             </Text>
           </View>
           <View style={styles.line}>
-            <Text style={styles.lableStyle}>Email</Text>
+            <TextInput style={styles.lableStyle}>Email</TextInput>
             <Text style={[styles.textStyle]}>{account?.profile?.email}</Text>
           </View>
           <View style={styles.line}>
-            <Text style={styles.lableStyle}>Location</Text>
+            <TextInput style={styles.lableStyle}>Location</TextInput>
             <Text style={[styles.textStyle]}>{account?.profile?.location}</Text>
           </View>
         </View>
@@ -122,25 +105,9 @@ export default function MyProfile({navigation}) {
         <ButtonCommon
           active
           text={'Edit Profile'}
-          onPress={() => navigation.navigate('EditProfile', {account: account})}
+          // onPress={() => navigation.navigate('EditProfile', {account: account})}
         />
       </View>
-      {/* <View>
-                <Text>CountryPicker</Text>
-                {open && <TextInput
-                    style={{ padding: 10, borderWidth: 1, margin: 10, borderRadius: 30, paddingHorizontal: 20 }}
-                    placeholder='Search country...'
-                    onChangeText={(value) => setTextSearch(value)}
-                />}
-                < DropDownPicker
-                    open={open}
-                    value={value}
-                    items={items}
-                    setOpen={setOpen}
-                    setValue={setValue}
-                    setItems={setItems}
-                />
-            </View> */}
     </SafeAreaView>
   );
 }

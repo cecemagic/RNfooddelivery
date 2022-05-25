@@ -1,10 +1,11 @@
 /* eslint-disable no-undef */
 /* eslint-disable react-native/no-inline-styles */
 import {StyleSheet, Text, View, Image, TextInput, FlatList} from 'react-native';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import HeaderBack from '../components/HeaderBack';
 import ButtonCommon from '../components/ButtonCommon';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+
 export default function AddCreditCardScreen({navigation}) {
   const [bankName, setBankName] = useState('Bank Name');
   const [holderName, setHolderName] = useState('Holder Name');

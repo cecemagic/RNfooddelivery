@@ -13,13 +13,13 @@ import HomeScreen from '../screens/HomeScreen';
 import Profile from '../screens/Profile';
 import PaymentSetting from '../screens/PaymentSetting';
 import HeaderBack from '../components/HeaderBack';
-import ChangePasswordScreen from '../screens/ChangePasswordScreen';
+// import ChangePasswordScreen from '../screens/ChangePasswordScreen';
 import CountryPicker from '../screens/CountryPicker';
 import AddCreditCardScreen from '../screens/AddCreditCardScreen';
-import EditProfileScreen from '../screens/EditProfileScreen';
+import EditProfileScreen from '../screens/EditProfile';
 import MyProfile from '../screens/MyProfile';
 import SearchBar from '../components/SearchBar';
-import ChangePWScreen from '../ChangePassword (1)';
+import ChangePWScreen from '../screens/ChangePassword (1)';
 //NOTES: File này là settings của navigation
 
 const Tab = createBottomTabNavigator(); //NOTES: Khai báo tabbar

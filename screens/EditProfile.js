@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-inline-styles */
 import {
   View,
   Text,
@@ -12,14 +11,15 @@ import React, {useState, useEffect, useRef} from 'react';
 import CheckBox from 'react-native-check-box';
 import DropDownPicker from 'react-native-dropdown-picker';
 import DatePicker from 'react-native-date-picker';
-// import {ButtonCommon, HeaderBack} from '../components';
-import {windowWidth} from '../screens/HomeScreen';
+// import {ButtonCommon, HeaderSub} from '../components';
+import {windowWidth} from '../screens/MainScreen';
 import {countries} from '../data/data';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {fullDate} from './MyProfile';
-import HeaderBack from '../components/HeaderBack';
 import ButtonCommon from '../components/ButtonCommon';
-export default function EditProfileScreen({route, navigation}) {
+import HeaderBack from '../components/HeaderBack';
+
+export default function EditProfile({route, navigation}) {
   const {account} = route.params;
   const [listAccount, setListAccount] = useState(null);
   const [profile, setProfile] = useState(null);
@@ -117,10 +117,9 @@ export default function EditProfileScreen({route, navigation}) {
   }, [input]);
 
   return (
-    <View style={{flex: 1, backgroundColor: '#fff'}}>
+    <View style={{flex: 1, backgroundColor: '#FFF', paddingHorizontal: 20}}>
       <View>
-        <HeaderBack />
-        {/* <HeaderSub text={'Edit Profile'} navigation={navigation} /> */}
+        <HeaderBack text={'Edit Profile'} navigation={navigation} />
       </View>
       <View style={{flex: 1}}>
         <View style={{alignItems: 'center', marginBottom: 20}}>
@@ -134,7 +133,7 @@ export default function EditProfileScreen({route, navigation}) {
             }}>
             <Image source={require('../assets/images/profilePic.png')} />
           </View>
-          {/* <TouchableOpacity
+          <TouchableOpacity
             style={{
               width: 40,
               height: 40,
@@ -146,11 +145,11 @@ export default function EditProfileScreen({route, navigation}) {
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Image
+            {/* <Image
               style={{resizeMode: 'contain', width: '80%'}}
               source={require('../assets/images/camera.png')}
-            />
-          </TouchableOpacity> */}
+            /> */}
+          </TouchableOpacity>
         </View>
         <FlatList
           data={[1]}
@@ -159,7 +158,6 @@ export default function EditProfileScreen({route, navigation}) {
               style={{
                 flexDirection: 'column',
                 marginTop: 30,
-                marginHorizontal: 30,
               }}>
               <View style={styles.information}>
                 <Text style={styles.label}>First Name</Text>
@@ -265,7 +263,6 @@ export default function EditProfileScreen({route, navigation}) {
       </View>
       <View>
         <ButtonCommon onPress={handleProfile} active text={'Save'} />
-        {/* <ButtonCommon  /> */}
       </View>
     </View>
   );

@@ -82,15 +82,6 @@ export default function ChangePassword({ navigation }) {
                         <Text style={{ fontFamily: 'Roboto', fontWeight: '400', fontSize: 14, lineHeight: 16, color: '#000' }}>Enter Old Password</Text>
                         <View style={{ marginVertical: 20 }}>
                             <InputCommon
-                                    // onChangeText={(value) => {
-                                    //     console.log('old pass', JSON.stringify(user.password));
-                                    //     if (value !== user.password) {
-
-                                    //         setCheckOldPass(true);
-                                    //     } else {
-                                    //         setCheckOldPass(false);
-                                    //     }
-                                    // }}
                                 placeholder={'Password'}
                             />
                             {checkOldPass && <Text style={styles.textError} >
@@ -98,12 +89,12 @@ export default function ChangePassword({ navigation }) {
                             </Text>}
                         </View>
                         <Text style={{ fontFamily: 'Roboto', fontWeight: '400', fontSize: 14, lineHeight: 16, marginTop: 10, color: '#000' }}>Create New Password</Text>
-                        <View style={{ marginVertical: 20 }}>
+                         <View style={{ marginVertical: 20 }}>
                             <InputCommon
                                 onChangeText={setNewPassword}
                                 placeholder={'Enter New Password'}
                             />
-                        </View>
+                        </View> 
                         <View >
                             <InputCommon
                                 onChangeText={(value) => {
